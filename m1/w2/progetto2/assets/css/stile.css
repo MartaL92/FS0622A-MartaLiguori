@@ -1,0 +1,364 @@
+/* IMPOSTAZIONI GENERALI */
+body {
+    font-family: 'Fira Sans', sans-serif;
+    color: #000;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+/* HEADER */
+header {
+    background-color: white;
+    box-shadow: 10px 10px #d3d3d3;
+    padding: 20px 20px;
+    position: sticky;
+    top: 0;
+}
+
+ul {
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+li a:link {
+    color: #e42424; 
+    text-decoration: none;
+}
+ul li {
+    margin-bottom: 15px;
+}
+
+.menu i {
+    float: right;
+    position: relative;
+    top: -100px;
+}
+
+.menu li ul {
+    display: none;
+}
+
+.menu li:hover ul {
+    display: list-item;
+    display: block;
+}
+
+/* MAIN */
+.titolo {
+    padding: 40px 40px;
+    color: white;
+    background-image: url(../images/banner.jpg);
+    background-position: center;
+    text-shadow: 3px 3px 3px black;
+}
+
+@keyframes anime {
+    0% {
+        box-shadow: 0px 0px 2px 2px #000;
+    }
+
+    50% {
+        box-shadow: 0px 0px 6px 6px #000;
+    }
+
+    100% {
+        box-shadow: 0px 0px 12px 12px #000;
+    }
+}
+
+.anime {
+    animation: anime 1s linear infinite alternate-reverse both;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+.titolo div {
+    margin-top: 30px;
+}
+
+.motivazioni {
+    text-align: center;
+    padding: 40px 40px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+}
+
+h3 {
+    font-size: 2.7rem;
+    line-height: 1;
+}
+
+.info {
+    padding: 40px 40px;
+    color: white;
+    background-color: #0c0633;
+    text-align: center;
+}
+
+.info div {
+    margin-top: 30px;
+}
+
+.futuro {
+    padding: 40px 40px;
+    text-align: center;
+}
+
+.futuro div {
+    margin-bottom: 30px;
+}
+
+/* CONTATTI */
+.contatti {
+    padding: 40px 40px;
+    text-align: center;
+}
+
+.formcontatti {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+}
+
+input::placeholder {
+    font-style: oblique;
+}
+
+.indirizzi div {
+    margin: 20px 20px;
+}
+
+/* CHI SIAMO */
+.chisiamo {
+    padding: 40px 40px;
+    text-align: center;
+}
+
+.chisiamo section {
+    margin-bottom: 30px;
+}
+
+.img div {
+    margin: 30px 30px;
+}
+
+table {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+table th,
+table td {
+    padding: 10px 5px;
+    ;
+}
+
+table th {
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+thead tr {
+    display: flex;
+    flex-direction: column;
+}
+
+tbody tr {
+    display: flex;
+    flex-direction: column;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #d2dce7;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(238, 238, 238);
+    padding: 40px 40px;
+}
+
+footer div {
+    padding: 10px 10px;
+    margin: 20px 0px;
+}
+
+.lni {
+    color: #e42424;
+    font-size: 2.5rem;
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    border: transparent;
+}
+
+input {
+    padding: 20px 20px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.pulsante {
+    text-decoration: none;
+    padding: 20px 20px;
+    font-size: 1.9rem;
+    color: white;
+    background-color: #6cc1e2;
+    background-image: linear-gradient(to right, #6cc1e2 0%, #392f7a 100%);
+}
+
+/* RESPONSIVE */
+
+@media screen and (min-width: 768px) {
+    .menu i {
+        visibility: hidden;
+    }
+
+    .menu li ul {
+        display: list-item;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    header div {
+        flex-basis: 20%;
+    }
+
+    .menu {
+        flex-basis: 80%;
+    }
+
+    .sottomenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .titolo {
+        padding: 150px 150px;
+        background-repeat: no-repeat;
+    }
+
+    .motivi,
+    .futuro,
+    .footer,
+    .img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .footer div {
+        display: flex;
+        flex-direction: column;
+        align-items: space-around;
+        flex-basis: 33%;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    footer {
+        padding: 100px 100px;
+    }
+
+    footer p {
+        text-align: center;
+    }
+
+    table {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    thead tr,
+    tbody tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        text-align: center;
+    }
+
+    tr th,
+    tr td {
+        text-align: center;
+        flex-basis: 33%;
+    }
+
+    thead {
+        background-color: #71a7e0;
+    }
+
+    .contatti {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 100px 100px;
+    }
+
+    .formcontatti,
+    .indirizzi {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (min-width: 1170px) {
+
+    header img {
+        width: 300px;
+    }
+
+    .titolo {
+        padding: 300px 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .info {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    .futuro img {
+        padding-left: 300px;
+        padding-right: 50px;
+    }
+
+    .futuro div {
+        padding-right: 300px;
+        padding-left: 50px;
+    }
+
+}
