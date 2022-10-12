@@ -24,7 +24,7 @@ annoNascita = (nome, anno, eta1) => {
 }
 
 document.getElementById('persona1').innerHTML = annoNascita ('Anna', anno, 30);
-document.getElementById('persona1').innerHTML = annoNascita ('Maria', anno, 24);
+document.getElementById('persona2').innerHTML = annoNascita ('Maria', anno, 24);
 
 //es4
 function torta () {
