@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="calcolatrice">
+    <title>Calcolatrice</title>
+</head>
+
+<body>
+    <header>
+        <h1>La mia calcolatrice in JS</h1>
+    </header>
+    <main>
+    <div id="calcolatrice">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4"><input type="text/number" id="video" disabled></th>
+                </tr>
+                <tr>
+                    <th colspan="4"><input type="text/number" id="video2" disabled></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" id="logo" class="tasto"><a href="https://epicode.com/" target="_blank">
+                        <img src="assets/img/logo.png" alt="link_logo"></a></td>
+                    <td><button type="button" value="(" id="parIn" class="tasto" onclick="premiTasto(this.value)">(</button></td>
+                    <td><button type="button" value=")" id="parOut" class="tasto" onclick="premiTasto(this.value)">)</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" value="7" id="set" class="tasto" onclick="premiTasto(this.value)">7</button></td>
+                    <td><button type="button" value="8" id="ott" class="tasto" onclick="premiTasto(this.value)">8</button></td>
+                    <td><button type="button" value="9" id="nov" class="tasto" onclick="premiTasto(this.value)">9</button></td>
+                    <td><button type="button" value="/" id="div" class="tasto" onclick="premiTasto(this.value)">/</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" value="4" id="qua" class="tasto" onclick="premiTasto(this.value)">4</button></td>
+                    <td><button type="button" value="5" id="cin" class="tasto" onclick="premiTasto(this.value)">
+                        <i class="fas fa-brands fa-html5"></i></button></td>
+                    <td><button type="button" value="6" id="sei" class="tasto" onclick="premiTasto(this.value)">6</button></td>
+                    <td><button type="button" value="*" id="per" class="tasto" onclick="premiTasto(this.value)">x</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" value="1" id="uno" class="tasto" onclick="premiTasto(this.value)">1</button></td>
+                    <td><button type="button" value="2" id="due" class="tasto" onclick="premiTasto(this.value)">2</button></td>
+                    <td><button type="button" value="3" id="tre" class="tasto" onclick="premiTasto(this.value)">3</button></td>
+                    <td><button type="button" value="-" id="min" class="tasto" onclick="premiTasto(this.value)">-</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" value="D" id="del" class="tasto" onclick="cancella()">
+                        <i class="fas fa-solid fa-arrow-left"></i></button></td>
+                    <td><button type="button" value="0" id="zer" class="tasto" onclick="premiTasto(this.value)">0</button></td>
+                    <td><button type="button" value="." id="dec" class="tasto" onclick="premiTasto(this.value)">.</button></td>
+                    <td><button type="button" value="+" id="plus" class="tasto" onclick="premiTasto(this.value)">+</i></button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" value="C" id="canc" class="tasto" onclick="elimina()">C</button></td>
+                    <td colspan="3"><button type="button" value="=" id="uguale" class="tasto" onclick="uguale()">=</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
