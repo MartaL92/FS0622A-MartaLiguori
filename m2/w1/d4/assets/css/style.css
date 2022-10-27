@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 10px;
+}
+
+#menu {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    display: inline-block;
+}
+
+.menuli {
+    padding: 10px;
+    list-style-type: none;
+    background-color: rgb(168, 121, 222);
+    display: block;
+    width: 200px;
+}
+
+.menucontainer {
+    display: none;
+}
+
+.menucontainerOpen {
+    display: block;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+div #testo {
+    margin: 50px auto;
+}
+
+#testo {
+    text-align: center;
+}
+
+.big {
+    font-size: 3.5rem;
+}
+
+.color {
+    color: red;
+}
+
+.maiusc {
+    text-transform: uppercase;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+h2 {
+    margin: 20px auto;
+    font-size: 1.5rem;
+}
+
+.barrato {
+    color: red;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+
+
+
