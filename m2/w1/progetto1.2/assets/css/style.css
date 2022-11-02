@@ -1,0 +1,58 @@
+body {
+    background-color: aliceblue;
+}
+
+#container {
+    display: inline-block;
+    border: 1px solid black;
+    margin: 50px 30%;
+    height: 600px;
+    overflow-y: auto;
+}
+
+h1 {
+    background-color: cornflowerblue;
+    width: 500px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 5px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+#button {
+    background: linear-gradient(45deg, cornflowerblue, aliceblue);
+    box-shadow: 1px 1px 1px gray;
+}
+
+#list li {
+    margin: 20px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.btnFatto {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: rgb(143, 202, 143);
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px gray;
+
+}
+
+.btnElimina {
+    background-color: rgb(195, 124, 124);
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px gray;
+
+}
+
+.toggleFatto {
+    opacity: 0.5;
+    color: green;
+    text-decoration: line-through;
+}
