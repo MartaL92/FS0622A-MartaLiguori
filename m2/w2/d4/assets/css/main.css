@@ -1,0 +1,72 @@
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-size: 18px;
+}
+@media screen and (min-width: 992px) {
+  body {
+    font-size: 21.6px;
+  }
+}
+
+#main-menu {
+  background-color: rgb(17, 17, 107);
+  font-style: oblique;
+  color: white;
+}
+#main-menu ul {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+#main-menu li {
+  list-style-type: none;
+}
+#main-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+}
+
+#main {
+  display: flex;
+  justify-content: space-between;
+}
+
+#content {
+  padding: 50px;
+  margin: 15px;
+}
+
+#sidebar {
+  width: 80%;
+  padding-top: 50px;
+  margin-left: 15px;
+}
+#sidebar li {
+  margin-bottom: 15px;
+  list-style-type: none;
+  border-bottom: dotted gray;
+}
+#sidebar li:hover {
+  background-color: rgb(214, 214, 214);
+}
+
+#footer {
+  background-color: cornflowerblue;
+  height: 50px;
+}
+
+#content a:link {
+  color: orange;
+  text-decoration: none;
+}
+#content .warning-button {
+  background-color: orange;
+  color: white;
+}
+#content .warning-button:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=main.css.map */

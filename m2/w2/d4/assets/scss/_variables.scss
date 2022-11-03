@@ -1,0 +1,41 @@
+@mixin font-body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+@mixin padding {
+    padding: 50px;
+    margin: 15px;
+}
+
+@mixin header {
+    background-color: rgb(17, 17, 107);
+    font-style: oblique;
+    color: white;
+}
+
+@mixin menu {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+@mixin alink {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+}
+
+@mixin colbot {
+    color: orange;
+    text-decoration: none;
+}
+
+$font-size: 18px;
+
+@mixin large-screens() {
+    @media screen and (min-width: 992px) {
+        font-size: $font-size * 1.2;
+    }
+}

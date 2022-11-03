@@ -1,0 +1,65 @@
+@import "functions";
+@import "variables";
+
+body {
+    @include font-body;
+    @include large-screens();
+}
+
+#main-menu {
+    @include header;
+
+    ul {
+        @include menu
+    };
+
+    li {
+        list-style-type: none
+    };
+
+    a {
+        @include alink
+    };
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+}
+
+#content {
+    @include padding;
+}
+
+#sidebar {
+    width: 80%;
+    padding-top: 50px;
+    margin-left: 15px;
+    li {
+        margin-bottom: 15px;
+        list-style-type: none;
+        border-bottom: dotted gray;
+        &:hover {
+            background-color: rgb(214, 214, 214);
+        }
+    }
+}
+
+#footer {
+    background-color: cornflowerblue;
+    height: 50px;
+}
+
+#content {
+    a:link {
+        @include colbot;
+    }
+    .warning-button {
+        background-color: orange;
+        color: white;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
