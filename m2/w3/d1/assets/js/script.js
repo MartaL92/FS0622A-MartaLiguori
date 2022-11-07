@@ -15,7 +15,7 @@ function datiTab(_nome, _cognome, _nascita) {
     }
 }
 
-btnVai.addEventListener('click', function () {
+btnVai.addEventListener('submit', function () {
     var myNome = document.getElementById('nome').value;
     var myCognome = document.getElementById('cognome').value;
     var myNascita = document.getElementById('nascita').value;

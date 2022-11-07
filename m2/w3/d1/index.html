@@ -19,25 +19,27 @@
 
     <main>
         <div class="container">
+            <form>
             <div class="row">
                 <div class="col-md-5">
-                    <div class="form-label">Nome</div>
-                    <input type="text" class="form-control" id="nome">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" required>
                 </div>
                 <div class="col-md-5">
-                    <div class="form-label">Cognome</div>
-                    <input type="text" class="form-control" id="cognome">
+                    <label class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="cognome" required>
                 </div>
                 <div class="col-md-2">
-                    <div class="form-label">Data di nascita</div>
-                    <input type="date" class="form-control" id="nascita">
+                    <label class="form-label">Data di nascita</label>
+                    <input type="date" class="form-control" id="nascita" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 offset-5 mt-3">
-                    <button type="button" class="btn btn-info" id="vai">Inserisci dati</button>
+                    <button type="submit" class="btn btn-info" id="vai">Inserisci dati</button>
                 </div>
             </div>
+            </form>
         </div>
 
         <hr>
