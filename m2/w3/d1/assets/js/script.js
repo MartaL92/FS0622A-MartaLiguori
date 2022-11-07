@@ -15,30 +15,24 @@ function datiTab(_nome, _cognome, _nascita) {
     }
 }
 
-btnVai.addEventListener('submit', function () {
+btnVai.addEventListener('click', function () {
     var myNome = document.getElementById('nome').value;
     var myCognome = document.getElementById('cognome').value;
     var myNascita = document.getElementById('nascita').value;
 
     var newDatiTab = new datiTab(myNome, myCognome, myNascita);
 
-    arrayDatiTab.push(newDatiTab);
+    var riga = document.createElement('tr');
+    riga.innerHTML = `<td>${newDatiTab.nome}</td><td>${newDatiTab.cognome}</td><td>${newDatiTab.eta()} anni</td>`;
+    tab.appendChild(riga);
 
-    tab.innerHTML = '';
+    var btnDel = document.createElement('button');
+    btnDel.className = 'btn btn-info';
+    btnDel.innerHTML = 'X';
+    riga.appendChild(btnDel);
 
-    arrayDatiTab.forEach((dati) => {
-        var riga = document.createElement('tr');
-        riga.innerHTML = `<td>${dati.nome}</td><td>${dati.cognome}</td><td>${dati.eta()} anni</td>`;
-        tab.appendChild(riga);
-
-        var btnDel = document.createElement('button');
-        btnDel.className = 'btn btn-info';
-        btnDel.innerHTML = 'X';
-        riga.appendChild(btnDel);
-
-        btnDel.addEventListener('click', function () {
-            var del = this.parentElement;
-            del.style.display = "none";
-        })
+    btnDel.addEventListener('click', function () {
+        var del = this.parentElement;
+        del.style.display = "none";
     })
 })
