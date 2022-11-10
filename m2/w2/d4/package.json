@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "json-server": "^0.17.1",
     "sass": "^1.55.0"
   }
 }

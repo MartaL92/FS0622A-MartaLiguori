@@ -14,7 +14,7 @@ class Paginazione {
             } else {
                 this.page = this.maxPages
             }
-            stampa()
+            this.stampa()
         })
     }
 
@@ -26,15 +26,9 @@ class Paginazione {
             } else {
                 this.page = 1
             }
-            stampa()
+            this.stampa()
         })
     }
-
-    //page = 1
-    //pageSize = 2
-    //start = pageSize * (page-1) = 0
-    //end = start + pageSize 
-    //stampa = array[0] array[1] 
 
     stampa() {
         var start = this.pageSize * (this.page - 1);
@@ -42,8 +36,19 @@ class Paginazione {
         tab = document.getElementById('datiTab');
         tab.innerHTML = '';
         for (i = start; i < end; i++) {
-            tab.innerHTML += `<tr><td>${this.items[i].id}</td><td>${this.items[i].nome}</td></tr>`;
+            this.append(this.items[i]);
         }
+    }
+
+    append(item){
+        var tr = document.createElement("tr");
+        var id = document.createElement("td");
+        id.innerHTML = item.id;
+        var nome = document.createElement("td");
+        nome.innerHTML = item.nome;
+
+        tr.append(id, nome);
+        tab.appendChild(tr);
     }
 }
 
