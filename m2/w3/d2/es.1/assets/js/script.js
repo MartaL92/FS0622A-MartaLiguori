@@ -4,43 +4,52 @@ class Paginazione {
         this.pageSize = _pageSize;
         this.page = 1;
         this.maxPages = Math.ceil(this.items.length / this.pageSize);
+        this.tab = document.getElementById('datiTab');
+        this.stampa();
+        this.buttons();
+    }
+
+    buttons() {
+        var next = document.getElementById('btnNext');
+        next.addEventListener('click', function () {
+            this.btnNext();
+        });
+
+        var prev = document.getElementById('btnPrev');
+        prev.addEventListener('click', function () {
+            this.btnPrev();
+        });
+
     }
 
     btnNext() {
-        var next = document.getElementById('btn_next');
-        next.addEventListener('click', function () {
-            if (this.page < this.maxPages) {
-                this.page += 1
-            } else {
-                this.page = this.maxPages
-            }
-            this.stampa()
-        })
+        if (this.page < this.maxPages) {
+            this.page += 1;
+        } else {
+            this.page = this.maxPages;
+        }
+        this.stampa();
     }
 
     btnPrev() {
-        var prev = document.getElementById('btn_prev');
-        prev.addEventListener('click', function () {
-            if (this.page > 1) {
-                this.page -= 1
-            } else {
-                this.page = 1
-            }
-            this.stampa()
-        })
+        if (this.page > 1) {
+            this.page -= 1;
+        } else {
+            this.page = 1;
+        }
+        this.stampa();
     }
 
     stampa() {
         var start = this.pageSize * (this.page - 1);
         var end = start + this.pageSize;
-        tab = document.getElementById('datiTab');
-        tab.innerHTML = '';
-        for (i = start; i < end; i++) {
+        this.tab.innerHTML = '';
+        for (let i = start; i < end; i++) {
             this.append(this.items[i]);
         }
     }
 
-    append(item){
+    append(item) {
         var tr = document.createElement("tr");
         var id = document.createElement("td");
         id.innerHTML = item.id;
@@ -48,7 +57,7 @@ class Paginazione {
         nome.innerHTML = item.nome;
 
         tr.append(id, nome);
-        tab.appendChild(tr);
+        this.tab.appendChild(tr);
     }
 }
 
@@ -95,7 +104,7 @@ var users = [
     }
 ]
 
-var pag = new Paginazione(users, 5);
+var pag = new Paginazione(users, 2);
 console.log(pag);
 
 

@@ -1,0 +1,44 @@
+{
+  "elenco": [
+    {
+      "nome": "Serena",
+      "cognome": "Giovane",
+      "id": 1
+    },
+    {
+      "nome": "Serena",
+      "cognome": "Vanvitelli",
+      "id": 2
+    },
+    {
+      "nome": "Serena",
+      "cognome": "Giovaniello",
+      "id": 3
+    },
+    {
+      "nome": "Marta",
+      "cognome": "Liguori",
+      "id": 4
+    },
+    {
+      "nome": "Marta",
+      "cognome": "Giovane",
+      "id": 5
+    },
+    {
+      "nome": "Marta",
+      "cognome": "Giova",
+      "id": 6
+    },
+    {
+      "nome": "Marta",
+      "cognome": "Giovanniello",
+      "id": 7
+    },
+    {
+      "nome": "Paolo",
+      "cognome": "Stefani",
+      "id": 8
+    }
+  ]
+}
