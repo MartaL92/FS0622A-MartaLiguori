@@ -13,43 +13,91 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Lavoratore = /** @class */ (function () {
-    function Lavoratore(_nome, _cognome, _codredd) {
-        this.nome = _nome;
-        this.cognome = _cognome;
-        this.codredd = _codredd;
+var Calcolo = /** @class */ (function () {
+    function Calcolo(_redditoAnnuoLordo, _tasseinps, _tasseirpef) {
+        this.redditoAnnuoLordo = _redditoAnnuoLordo;
+        this.tasseinps = _tasseinps;
+        this.tasseirpef = _tasseirpef;
     }
-    return Lavoratore;
+    return Calcolo;
 }());
-var Pagatasse = /** @class */ (function (_super) {
-    __extends(Pagatasse, _super);
-    function Pagatasse(_nome, _cognome, _codredd, _reddito, _tasseInps, _tasseIrpef) {
-        var _this = _super.call(this, _nome, _cognome, _codredd) || this;
-        _this.reddito = _reddito;
-        _this.tasseInps = _tasseInps;
-        _this.tasseIrpef = _tasseIrpef;
+var Professionista = /** @class */ (function (_super) {
+    __extends(Professionista, _super);
+    function Professionista(_redditoAnnuoLordo, _tasseinps, _tasseirpef) {
+        var _this = _super.call(this, _redditoAnnuoLordo, _tasseinps, _tasseirpef) || this;
+        _this.codredd = 78;
         return _this;
     }
-    Pagatasse.prototype.getUtileTasse = function () {
-        return (this.reddito * this.codredd / 100);
+    Professionista.prototype.getUtileTasse = function () {
+        return (this.redditoAnnuoLordo * this.codredd / 100);
     };
-    ;
-    Pagatasse.prototype.getTasseInps = function () {
-        return (this.getUtileTasse() * this.tasseInps / 100);
+    Professionista.prototype.getTasseInps = function () {
+        return (this.getUtileTasse() * this.tasseinps / 100);
     };
-    ;
-    Pagatasse.prototype.getTasseIrpef = function () {
-        return (this.getUtileTasse() * this.tasseIrpef / 100);
+    Professionista.prototype.getTasseIrpef = function () {
+        return (this.getUtileTasse() * this.tasseirpef / 100);
     };
-    ;
-    Pagatasse.prototype.getRedditoAnnuoNetto = function () {
-        return (this.reddito - (this.tasseInps + this.tasseIrpef));
+    Professionista.prototype.getRedditoAnnuoNetto = function () {
+        return this.redditoAnnuoLordo - (this.getTasseInps() + this.getTasseIrpef());
     };
-    return Pagatasse;
-}(Lavoratore));
-var artigiano = new Pagatasse('Marta', 'Liguori', 77, 2000, 281, 230);
-console.log(artigiano.getUtileTasse(), artigiano.getTasseInps(), artigiano.getTasseIrpef(), artigiano.getRedditoAnnuoNetto());
-var professionista = new Pagatasse('Paola', 'Agosto', 78, 2500, 330, 240);
-console.log(professionista.getUtileTasse(), professionista.getTasseInps(), professionista.getTasseIrpef(), professionista.getRedditoAnnuoNetto());
-var commerciante = new Pagatasse('Stefano', 'Rossi', 40, 1800, 250, 230);
-console.log(commerciante.getUtileTasse(), commerciante.getTasseInps(), commerciante.getTasseIrpef(), commerciante.getRedditoAnnuoNetto());
+    return Professionista;
+}(Calcolo));
+var Artigiano = /** @class */ (function (_super) {
+    __extends(Artigiano, _super);
+    function Artigiano(_redditoAnnuoLordo, _tasseinps, _tasseirpef) {
+        var _this = _super.call(this, _redditoAnnuoLordo, _tasseinps, _tasseirpef) || this;
+        _this.codredd = 67;
+        return _this;
+    }
+    Artigiano.prototype.getUtileTasse = function () {
+        return (this.redditoAnnuoLordo * this.codredd / 100);
+    };
+    Artigiano.prototype.getTasseInps = function () {
+        return (this.getUtileTasse() * this.tasseinps / 100);
+    };
+    Artigiano.prototype.getTasseIrpef = function () {
+        return (this.getUtileTasse() * this.tasseirpef / 100);
+    };
+    Artigiano.prototype.getRedditoAnnuoNetto = function () {
+        return this.redditoAnnuoLordo - (this.getTasseInps() + this.getTasseIrpef());
+    };
+    return Artigiano;
+}(Calcolo));
+var Commerciante = /** @class */ (function (_super) {
+    __extends(Commerciante, _super);
+    function Commerciante(_redditoAnnuoLordo, _tasseinps, _tasseirpef) {
+        var _this = _super.call(this, _redditoAnnuoLordo, _tasseinps, _tasseirpef) || this;
+        _this.codredd = 40;
+        return _this;
+    }
+    Commerciante.prototype.getUtileTasse = function () {
+        return (this.redditoAnnuoLordo * this.codredd / 100);
+    };
+    Commerciante.prototype.getTasseInps = function () {
+        return (this.getUtileTasse() * this.tasseinps / 100);
+    };
+    Commerciante.prototype.getTasseIrpef = function () {
+        return (this.getUtileTasse() * this.tasseirpef / 100);
+    };
+    Commerciante.prototype.getRedditoAnnuoNetto = function () {
+        return this.redditoAnnuoLordo - (this.getTasseInps() + this.getTasseIrpef());
+    };
+    return Commerciante;
+}(Calcolo));
+var newProfessionista = new Professionista(25000, 200, 300);
+console.log("utile tasse professionista: €", newProfessionista.getUtileTasse());
+console.log("tasse inps professionista: €", newProfessionista.getTasseInps());
+console.log("tasse irpef professionista: €", newProfessionista.getTasseIrpef());
+console.log("reddito annuo netto professionista: €", newProfessionista.getRedditoAnnuoNetto());
+console.log("----------------------------------------------------------------------------------");
+var newArtigiano = new Artigiano(25000, 200, 300);
+console.log("utile tasse artigiano: €", newArtigiano.getUtileTasse());
+console.log("tasse inps artigiano: €", newArtigiano.getTasseInps());
+console.log("tasse irpef artigiano: €", newArtigiano.getTasseIrpef());
+console.log("reddito annuo netto artigiano: €", newArtigiano.getRedditoAnnuoNetto());
+console.log("----------------------------------------------------------------------------------");
+var newCommerciante = new Commerciante(25000, 200, 300);
+console.log("utile tasse commerciante: €", newCommerciante.getUtileTasse());
+console.log("tasse inps commerciante: €", newCommerciante.getTasseInps());
+console.log("tasse irpef commerciante: €", newCommerciante.getTasseIrpef());
+console.log("reddito annuo netto commerciante: €", newCommerciante.getRedditoAnnuoNetto());
