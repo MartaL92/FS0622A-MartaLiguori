@@ -1,6 +1,12 @@
 {
   "utenti": [
-
+    {
+      "nome": "Maurizio",
+      "cognome": "Villanova",
+      "email": "mauriziovillanova5@gmail.com",
+      "password": "mAURIZIO1998.",
+      "id": 1
+    }
   ],
   "articoli": [
     {
@@ -75,6 +81,13 @@
     }
   ],
   "carrello": [
-
+    {
+      "idUtente": "Maurizio",
+      "arrayArticoli": [
+        "4",
+        "8"
+      ],
+      "id": 1
+    }
   ]
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-between align-content-center">
+        <div class="container">
+            <form id="versaSon">
+                <div class="mb-3">
+                    <label for="versa1" class="form-label">Importo da versare</label>
+                    <input type="number" class="form-control" id="versa1" required>
+                    <button type="submit" class="btn btn-success" id="btnVersa1">Versa</button>
+                </div>
+            </form>
+            <form id="prelevaSon">
+                <div class="mb-3">
+                    <label for="preleva1" class="form-label">Importo da prelevare</label>
+                    <input type="number" class="form-control" id="preleva1" required>
+                    <button type="submit" class="btn btn-success" id="btnPreleva1">Preleva</button>
+                </div>
+            </form>
+            <hr>
+            <div>
+                <h2>Figlio</h2>
+                <ul id="operazioni1">
+
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <form id="versaMother">
+                <div class="mb-3">
+                    <label for="versa2" class="form-label">Importo da versare</label>
+                    <input type="number" class="form-control" id="versa2" required>
+                    <button type="submit" class="btn btn-success" id="btnVersa2">Versa</button>
+                </div>
+            </form>
+            <form id="prelevaMother">
+                <div class="mb-3">
+                    <label for="preleva2" class="form-label">Importo da prelevare</label>
+                    <input type="number" class="form-control" id="preleva2" required>
+                    <button type="submit" class="btn btn-success" id="btnPreleva2">Preleva</button>
+                </div>
+            </form>
+            <hr>
+            <div>
+                <h2>Madre</h2>
+                <ul id="operazioni2">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="conto.js"></script>
+</body>
+
+</html>

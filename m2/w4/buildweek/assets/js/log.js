@@ -1,3 +1,13 @@
+function avviaCarusel() {
+  const carousel = new bootstrap.Carousel('#carouselExampleControls')
+  carousel.cycle();
+  document.getElementById('next').addEventListener('click', ()=>{
+    carousel.next();
+  });
+  document.getElementById('prev').addEventListener('click', ()=>{
+    carousel.prev();
+  })
+}
 var elenco = [];
 
 class Utente {
@@ -14,6 +24,7 @@ window.addEventListener("DOMContentLoaded", init());
 function init() {
   registra(); //al click della registrazione
   logIn(); //al click del login
+avviaCarusel();
 }
 
 // REGISTRAZIONE
@@ -33,32 +44,12 @@ function registra() {
       email: emailReg.value,
       password: passReg.value,
     };
-    if (/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(emailReg.value)) {
+    if (/^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(emailReg.value) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(passReg.value)) {
       //validazione RegEx
       addUsers(dati).then((u)=>{creaCarrello(u)});//dopo che avrà finito eseguirà la funzione creaCarrello altrimenti usa await(funzione asincrona sincrona funzione fetch) then (asincrona/promise)
     } else {
-      alert("Inserisci una email valida");
+      alert("Inserisci una email e una password valida");
     }
-  });
-}
-class Carrello {//classe per raccogliere gli elementi del carrello
-  constructor(_idUtente, _arrayArticoli = []) {
-      this.idUtente = _idUtente;
-      this.arrayArticoli = _arrayArticoli;
-  }
-}
-function creaCarrello(u) {//funzione per aggiungere gli elemnti del carrello nel localstorage
-  var arrayCarrello = [];
-  var carrelloUtente = new Carrello(u, arrayCarrello);
-  newCarrello(carrelloUtente);//carrello in base al nome dell'utente
-}
-async function newCarrello(carrelloUtente) {//dal localstorage gli passa al json//aggiunta nuovo carrello
-  let response = await fetch("http://localhost:3000/carrello", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(carrelloUtente),
   });
 }
 
@@ -70,7 +61,7 @@ async function addUsers(dati) {
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(dati),
-  });
+  }); console.log('ciao')
   clearForm();
   return dati.nome;// u nella freccia then
 }
@@ -82,6 +73,32 @@ function clearForm() {
   emailReg.value = "";
   passReg.value = "";
 }
+class Carrello {//classe per raccogliere gli elementi del carrello
+  constructor(_idUtente, _arrayArticoli = []) {
+      this.idUtente = _idUtente;
+      this.arrayArticoli = _arrayArticoli;
+  }
+}
+
+  function creaCarrello(u) {//funzione per aggiungere gli elemnti del carrello nel localstorage
+      var arrayCarrello = [];
+      var carrelloUtente = new Carrello(u, arrayCarrello);
+      newCarrello(carrelloUtente);//carrello in base al nome dell'utente
+  }
+  async function newCarrello(carrelloUtente) {//dal localstorage gli passa al json//aggiunta nuovo carrello
+      let response = await fetch("http://localhost:3000/carrello", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(carrelloUtente),
+       
+      });
+    
+    }
+
+
+
 
 // LOGIN
 
@@ -107,7 +124,6 @@ function logIn() {
           });
         });
     }
-
   });
 }
 
@@ -117,11 +133,9 @@ function entra() {//al momento del click del log in l'utente si troverà nella p
   if (!localStorage.getItem(utente.nome)) {
     localStorage.setItem("nome", utente.nome);
   }
-
   location.href = "home.html";
+  console.log(utente);
+ 
 }
 
-
-
-
-
+//put sul carrello
