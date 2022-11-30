@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "body":"Post1",
+        "title":"Post1",
+        "active":true,
+        "type": "education"
+    },
+    {
+        "id":2,
+        "body":"Post2",
+        "title":"Post2",
+        "active":true,
+        "type": "news"
+    },
+    {
+        "id":3,
+        "body":"Post3",
+        "title":"Post3",
+        "active":true,
+        "type": "politic"
+    },
+    {
+        "id":4,
+        "body":"Post4",
+        "title":"Post4",
+        "active":false,
+        "type": "news"
+    },
+    {
+        "id":5,
+        "body":"Post5",
+        "title":"Post5",
+        "active":false,
+        "type": "education"
+    }
+]
