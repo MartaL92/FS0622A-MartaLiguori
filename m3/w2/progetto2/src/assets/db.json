@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "et ea vero quia laudantium autem",
+      "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus",
+      "active": false,
+      "autor": "Marta",
+      "type": "news",
+      "email": "info@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "title": "in quibusdam tempore odit est dolorem",
+      "body": "itaque id aut magnam praesentium quia et ea odit et ea voluptas et",
+      "active": false,
+      "autor": "Raffaele",
+      "type": "politic",
+      "email": "info@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+      "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque",
+      "active": true,
+      "autor": "Lorenzo",
+      "type": "news",
+      "email": "info@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 4,
+      "title": "voluptatem eligendi optio",
+      "body": "fuga et accusamus dolorum perferendis illo voluptas",
+      "active": true,
+      "autor": "Marta",
+      "type": "news",
+      "email": "info@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 5,
+      "title": "eveniet quod temporibus",
+      "body": "reprehenderit quos placeat velit minima officia dolores impedit",
+      "active": false,
+      "autor": "Lorenzo",
+      "type": "news",
+      "email": "info@gmail.com",
+      "role": "admin"
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "Marta",
+      "email": "ml@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 1,
+      "name": "Lorenzo",
+      "email": "ll@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Raffaele",
+      "email": "rl@gmail.com",
+      "role": "admin"
+    }
+  ]
+}
