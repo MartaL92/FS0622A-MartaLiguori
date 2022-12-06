@@ -1,0 +1,42 @@
+<div class="container m-3">
+  <h1 class="text-center">Reactive Form</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="formR">
+        <div formGroupName="eroeInfo">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" formControlName="name" id="name" class="form-control">
+            <span *ngIf="getForm('eroeInfo.name')?.invalid && getForm('eroeInfo.name')?.touched">
+              <ng-container *ngIf="getErrors('eroeInfo.name', 'required')">Campo nome obbligatorio</ng-container>
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="alter">AlterEgo</label>
+            <input type="alter" formControlName="alter" id="alter" class="form-control">
+            <span *ngIf="getForm('eroeInfo.alter')?.invalid && getForm('eroeInfo.alter')?.touched">
+              <ng-container *ngIf="getErrors('eroeInfo.alter', 'required')">Campo alter obbligatorio</ng-container>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="enemy">Nemico</label>
+          <input type="enemy" formControlName="enemy" id="enemy" class="form-control">
+          <span *ngIf="getForm('eroeInfo.enemy')?.invalid && getForm('eroeInfo.enemy')?.touched">
+            <ng-container *ngIf="getErrors('eroeInfo.enemy', 'required')">Campo nemico obbligatorio</ng-container>
+          </span>
+        </div>
+        <div formArrayName="power" class="m-3">
+          <h3>Poteri</h3>
+          <button type="button" (click)="addPower()" class="btn btn-success">Aggiungi power</button>
+          <div class="form-group m-3" *ngFor="let powerC of getPower(); let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+        <button type="submit" (click)="submit()" class="btn btn-info">Invia</button>
+      </form>
+    </div>
+  </div>
+</div>

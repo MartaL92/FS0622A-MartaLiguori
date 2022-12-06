@@ -1,0 +1,47 @@
+<div class="container">
+  <h1 class="text-center">Template Driven Forms</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div>
+          <form (ngSubmit)="submit()" #f="ngForm">
+            <div ngModelGroup="userInfo" id="userInfo" #userGroup="ngModelGroup">
+              <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" [ngModel]="userForm.name" name="name" class="form-control"
+                  required #name="ngModel">
+                <p *ngIf="name.invalid && name.touched"><strong>Questo campo è obbligatorio</strong></p>
+              </div>
+              <div class="form-group">
+                <label for="alter">AlterEgo</label>
+                <input type="alter" id="alter" [ngModel]="userForm.alter" name="alter" class="form-control" required #alter="ngModel">
+                <p *ngIf="alter.invalid && alter.touched"><strong>Questo campo è obbligatorio</strong></p>
+              </div>
+              <div class="form-group">
+                <label for="power">
+                  SuperPower
+                </label>
+                <select id="power" [ngModel]="userForm.power" name="power" class="form-select">
+                  <option value="ghiaccio">Ghiacchio</option>
+                  <option value="fuoco">Fuoco</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="enemy">Nemico</label>
+                <input type="text" id="enemy" [ngModel]="userForm.enemy" name="enemy" class="form-control"
+                  required #enemy="ngModel">
+                <p *ngIf="enemy.invalid && enemy.touched"><strong>Questo campo è obbligatorio</strong></p>
+              </div>
+              <div class="form-group">
+                <label for="planet">Pianeta</label>
+                <input type="text" id="planet" [ngModel]="userForm.planet" name="planet" class="form-control"
+                  required #planet="ngModel">
+                <p *ngIf="planet.invalid && planet.touched"><strong>Questo campo è obbligatorio</strong></p>
+              </div>
+              <button type="submit" class="btn btn-info m-2" [disabled]="f.invalid">Invia</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
