@@ -1,0 +1,12 @@
+<div class="row">
+    <h1>Lista Preferiti</h1>
+    <div class="col-3" *ngFor="let favourite of favourites; index as i">
+        <div class="card" style="width: 18rem;">
+            <img src="{{favourite.poster_path}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{favourite.title}}</h5>
+                <button type="button" class="btn btn-success m-2" (click)='elimina(favourite.id, i)'> Dislike </button>
+            </div>
+        </div>
+    </div>
+</div>

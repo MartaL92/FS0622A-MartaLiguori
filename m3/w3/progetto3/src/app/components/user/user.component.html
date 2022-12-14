@@ -1,0 +1,15 @@
+<div class="container align-items-center my-3" *ngIf="auth.user$">
+    <div class="card m-3" style="max-width: 100%;">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-4">
+          <img src="https://picsum.photos/150/200" class="card-img-top">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" *ngIf="profilo">
+            <h2 class="card-title">{{profilo.name}} - {{profilo.surname}}</h2>
+            <p class="card-text">{{profilo.email}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

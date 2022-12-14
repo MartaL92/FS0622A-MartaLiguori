@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand mb-3 navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a
+              class="nav-link"
+              [routerLink]="['/users']"
+              routerLinkActive="active"
+              >Users</a
+            >
+          </li>
+          <li class="nav-item"  *ngIf="isLoggedIn">
+            <a
+              class="nav-link "
+              [routerLink]="['/home']"
+              routerLinkActive="active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item"  *ngIf="isLoggedIn">
+            <a
+              class="nav-link "
+              [routerLink]="['/favourite']"
+              routerLinkActive="active"
+              >Preferiti</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a
+              class="nav-link "
+              [routerLink]="['/']"
+              routerLinkActive="active"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a
+              class="nav-link "
+              [routerLink]="['/signup']"
+              routerLinkActive="active"
+              >Signup</a
+            >
+          </li>
+        </ul>
+
+        <button class="btn btn-danger" (click)="onLogout()" *ngIf="isLoggedIn" >Logout</button>
+
+      </div>
+    </div>
+  </nav>

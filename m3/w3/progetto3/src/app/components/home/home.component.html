@@ -1,0 +1,14 @@
+<div class="row">
+    <h1>Lista Film</h1>
+    <div class="col-3" *ngFor="let movie of movies">
+        <div class="card" style="width: 18rem;">
+            <img src="{{movie.poster_path}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <button type="button" class="btn btn-success m-2" (click)='aggiungi(movie)'> Like </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
