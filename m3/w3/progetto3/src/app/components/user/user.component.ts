@@ -14,7 +14,6 @@ export class UserComponent implements OnInit {
 
   profileUser!: AuthData | any;
   profilo!: User | any;
-  userId!: any;
 
   constructor(private srv:NetflixService, public auth: AuthService) { }
 
@@ -23,8 +22,6 @@ export class UserComponent implements OnInit {
       (profile: any) => (this.profileUser = JSON.stringify(profile.user, null, 2)),
     );
     this.profilo = JSON.parse(this.profileUser || '{}');
-    this.userId = this.profilo.id;
-    localStorage.setItem('userId', this.userId)
   }
 
 }

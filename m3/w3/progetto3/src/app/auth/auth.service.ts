@@ -33,6 +33,7 @@ export class AuthService {
   private authSubject = new BehaviorSubject<null|AuthData>(null);
   user$ = this.authSubject.asObservable()
   isLoggedIn$ = this.user$.pipe(map(user=>!!user))
+  userId: number | null = null;
 
   autologoutTimer:any
 
@@ -48,11 +49,16 @@ export class AuthService {
       tap((data) => {
         this.authSubject.next(data);
         localStorage.setItem('user',JSON.stringify(data))
+        this.userId = data.user.id;
         const expirationDate = this.jwtHelper.getTokenExpirationDate(data.accessToken) as Date
         this.autoLogut(expirationDate)
       }),
       catchError(this.errors)
     );
+  }
+
+  getUserId(){
+    return this.userId;
   }
 
   restoreUser(){

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Favourites } from 'src/app/interface/favourites';
 import { Movies } from 'src/app/interface/movies';
+import { User } from 'src/app/interface/user';
 import { NetflixService } from 'src/app/service/netflix.service';
 
 @Component({

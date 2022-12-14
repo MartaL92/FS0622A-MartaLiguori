@@ -27,10 +27,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  aggiungi(movie: any): any {
+  aggiungi(movie: Movies) {
     this.srv.addFavourite(movie).subscribe((res) => {
       this.film = res;
-      this.film.userId = localStorage.getItem('userId')
     })
 
   }
