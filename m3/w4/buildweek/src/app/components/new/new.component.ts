@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/interface/post';
 import { PostService } from 'src/app/services/post.service';
 
@@ -10,7 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class NewComponent implements OnInit {
 
-  constructor(private postSrv: PostService) { }
+  constructor(private postSrv: PostService, private route: ActivatedRoute, private router: Router) { }
 
   @ViewChild('f', { static: true }) form!: NgForm; // identifica il form
 
@@ -32,8 +33,8 @@ export class NewComponent implements OnInit {
     if (confirm("Are you sure to add a new post?")) { // dopo la conferma
       this.postSrv.newPost(this.form.value).subscribe((res) => { // parte la funzione POST che inserisce nel json i dati inseriti nel form
         this.posts = res;
+        this.router.navigate(['/']);
       })
-      this.form.reset(); // il form si svuola
     }
   }
 }
